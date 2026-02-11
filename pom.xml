@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>vulnerable-january-february-2026</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>Vulnerable Demo - Jan-Feb 2026 CVEs</name>
+    <description>Maven project with recently disclosed vulnerabilities from January-February 2026</description>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <!-- CVE-2026-24400: AssertJ XXE Vulnerability
+             Disclosed: January 26, 2026
+             Vulnerable versions: 1.4.0 to 3.27.6
+             Severity: High (CVSS 7.1)
+             Issue: XML External Entity (XXE) vulnerability in isXmlEqualTo assertion
+             Fixed in: 3.27.7 -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.25.3</version>
+        </dependency>
+
+        <!-- CVE-2026-21452: MessagePack for Java DoS Vulnerability
+             Disclosed: January 5, 2026
+             Vulnerable versions: All versions before 0.9.11
+             Severity: High (CVSS 7.5)
+             Issue: Remote DoS via malicious EXT payload allocation
+             Fixed in: 0.9.11 -->
+        <dependency>
+            <groupId>org.msgpack</groupId>
+            <artifactId>msgpack-core</artifactId>
+            <version>0.9.8</version>
+        </dependency>
+
+        <!-- CVE-2026-21945, CVE-2026-21932, CVE-2026-21933, CVE-2026-21925
+             Java SE vulnerabilities from Oracle January 2026 CPU
+             Disclosed: January 2026
+             Note: These affect the JDK/JRE runtime, not Maven dependencies directly
+             But including older Java libraries that may be affected -->
+
+        <!-- CVE-2025-41248 & CVE-2025-41249: Spring Security/Framework
+             Disclosed: Late 2025 but still relevant in early 2026
+             Issue: Authorization bypass via annotation resolution flaws
+             Severity: Medium (CVSS 4.4)
+             Note: Affects Spring Security with @PreAuthorize on parameterized types -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>6.2.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>6.1.0</version>
+        </dependency>
+
+        <!-- Additional vulnerable dependencies for demonstration -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>3.2.0</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- OWASP Dependency Check Plugin to scan for vulnerabilities -->
+            <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <version>12.2.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- Fail build on CVSS >= 7 -->
+                    <failBuildOnCVSS>7</failBuildOnCVSS>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
