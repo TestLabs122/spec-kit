@@ -1,0 +1,32 @@
+{
+  "name": "vulnerable-npm-demo",
+  "version": "1.0.0",
+  "description": "Demo project with npm vulnerabilities disclosed in January-February 2026",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "audit": "npm audit",
+    "audit-fix": "npm audit fix"
+  },
+  "keywords": [
+    "vulnerable",
+    "security",
+    "demo"
+  ],
+  "author": "Security Research",
+  "license": "MIT",
+  "dependencies": {
+    "tar": "6.1.0",
+    "jsonpath": "1.1.1",
+    "fast-xml-parser": "4.4.0",
+    "eslint": "8.57.1",
+    "lodash": "4.17.11",
+    "next": "14.2.35",
+    "diff": "4.0.2"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}
