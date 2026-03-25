@@ -21,7 +21,6 @@
 - [🎯 Experimental Goals](#-experimental-goals)
 - [🔧 Prerequisites](#-prerequisites)
 - [📖 Learn More](#-learn-more)
-- [📋 Detailed Process](#-detailed-process)
 - [🔍 Troubleshooting](#-troubleshooting)
 - [👥 Maintainers](#-maintainers)
 - [💬 Support](#-support)
