@@ -5,7 +5,6 @@
 </div>
 
 <p align="center">
-    <strong>An open source toolkit that allows you to focus on product scenarios and predictable outcomes instead of vibe coding every piece from scratch.</strong>
 </p>
 
 <p align="center">
