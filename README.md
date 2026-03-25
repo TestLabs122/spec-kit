@@ -1,7 +1,7 @@
 <div align="center">
     <img src="./media/logo_large.webp" alt="Spec Kit Logo" width="200" height="200"/>
     <h1>🌱 Spec Kit</h1>
-    <h3><em>Build high-quality software</em></h3>
+    <h3><em>Build software</em></h3>
 </div>
 
 <p align="center">
