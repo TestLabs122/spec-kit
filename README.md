@@ -17,7 +17,6 @@
 - [📽️ Video Overview](#️-video-overview)
 - [🤖 Supported AI Agents](#-supported-ai-agents)
 - [📚 Core Philosophy](#-core-philosophy)
-- [🌟 Development Phases](#-development-phases)
 - [🎯 Experimental Goals](#-experimental-goals)
 - [🔧 Prerequisites](#-prerequisites)
 - [📖 Learn More](#-learn-more)
